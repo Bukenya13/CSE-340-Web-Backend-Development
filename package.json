@@ -1,0 +1,28 @@
+{
+  "name": "cse-340-web-backend-development",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/Bukenya13/CSE-340-Web-Backend-Development#readme",
+  "bugs": {
+    "url": "https://github.com/Bukenya13/CSE-340-Web-Backend-Development/issues"
+  },
+  "repository": {
+    "url": "git+https://github.com/sburton-pathway/cse340-sb-demo.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon",
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "ejs": "^5.0.2",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
