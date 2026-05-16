@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: cse-340-web-backend
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm start
