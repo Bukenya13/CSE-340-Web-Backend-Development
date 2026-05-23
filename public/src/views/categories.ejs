@@ -9,8 +9,8 @@
                 <div class="category-list">
                     <% categories.forEach(function(category) { %>
                         <div class="category-card">
-                            <h3><%= category %></h3>
-                            <p>Description for <%= category %>.</p>
+                            <h3><%= category.name %></h3>
+                            <p><%= category.description %></p>
                         </div>
                     <% }) %>
                 </div>

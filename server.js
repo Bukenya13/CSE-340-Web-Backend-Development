@@ -4,6 +4,7 @@ import { fileURLToPath } from 'url';
 import { testConnection } from './public/src/models/db.js';
 import { getAllOrganizations } from './public/src/models/organizations.js';
 import { getAllProjects } from './public/src/models/projects.js';
+import { getAllCategories } from './public/src/models/categories.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -39,9 +40,10 @@ app.get('/projects', async (req, res) => {
 });
 
 // 4. Categories Route
-app.get('/categories', (req, res) => {
-    const categories = ['Education', 'Healthcare', 'Environment'];
-    res.render('categories', { title: 'Service Categories', categories });
+app.get('/categories', async (req, res) => {
+    const categories = await getAllCategories();
+    const title = 'Service Categories';
+    res.render('categories', { title, categories });
 });
 
 // 5. Server Listener & DB Connection
