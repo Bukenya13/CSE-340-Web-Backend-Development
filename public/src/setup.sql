@@ -34,17 +34,3 @@ INSERT INTO project (organization_id, title, description, location, date) VALUES
     (3, 'Food Bank Sorting', 'Sort and organize donated food items.', 'Local Food Bank', '2026-06-16'),
     (3, 'Senior Center Lunch Service', 'Serve lunch to seniors and provide companionship.', 'Sunset Senior Living', '2026-12-22'),
     (3, 'Neighborhood Cleanup', 'Pick up litter and beautify local streets.', 'Oakwood District', '2027-07-10');
-
--- Category table creation
-CREATE TABLE IF NOT EXISTS category (
-    category_id SERIAL PRIMARY KEY,
-    name VARCHAR(100) NOT NULL UNIQUE,
-    description TEXT
-);
-
--- Sample data for categories
-INSERT INTO category (name, description) VALUES
-    ('Education', 'Projects focused on learning and skill development'),
-    ('Healthcare', 'Projects supporting medical services and wellness'),
-    ('Environment', 'Projects promoting conservation and sustainability')
-    ON CONFLICT (name) DO NOTHING;
