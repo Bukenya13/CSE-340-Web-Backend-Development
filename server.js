@@ -1,10 +1,14 @@
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import dotenv from 'dotenv';
 import { testConnection } from './public/src/models/db.js';
 import { getAllOrganizations } from './public/src/models/organizations.js';
 import { getAllProjects } from './public/src/models/projects.js';
 import { getAllCategories } from './public/src/models/categories.js';
+
+// Load environment variables
+dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

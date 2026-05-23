@@ -1,5 +1,9 @@
 
 import { Pool } from 'pg';
+import dotenv from 'dotenv';
+
+// Load environment variables
+dotenv.config();
 
 /**
  * Connection pool for PostgreSQL database.
@@ -18,6 +22,14 @@ const pool = new Pool({
         rejectUnauthorized: false
     }
 });
+
+// Log the connection string for debugging (hide password)
+if (process.env.DB_URL) {
+    const url = new URL(process.env.DB_URL);
+    console.log(`Database connecting to: ${url.hostname}:${url.port}/${url.pathname.substring(1)}`);
+} else {
+    console.error('DB_URL environment variable is not set!');
+}
 
 /**
  * Common SSL Issue:
