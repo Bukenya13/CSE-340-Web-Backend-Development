@@ -2,10 +2,10 @@ import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
-import { testConnection } from './public/src/models/db.js';
-import { getAllOrganizations } from './public/src/models/organizations.js';
-import { getAllProjects } from './public/src/models/projects.js';
-import { getAllCategories } from './public/src/models/categories.js';
+import { testConnection } from './src/models/db.js';
+import { getAllOrganizations } from './src/models/organizations.js';
+import { getAllProjects } from './src/models/projects.js';
+import { getAllCategories } from './src/models/categories.js';
 
 // Load environment variables
 dotenv.config();
@@ -19,7 +19,7 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'public', 'src', 'views'));
+app.set('views', path.join(__dirname, 'src', 'views'));
 app.set('view cache', false);
 
 app.use(express.static(path.join(__dirname, 'public')));
