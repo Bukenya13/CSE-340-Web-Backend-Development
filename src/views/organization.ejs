@@ -1,6 +1,7 @@
 <%- include('partials/header') %>
 <main>
     <h1><%= organizationDetails.name %></h1>
+    <p><a class="action-link" href="/edit-organization/<%= organizationDetails.organization_id %>">Edit Organization</a></p>
     <div class="detail-layout">
         <img class="detail-logo" src="/images/<%= organizationDetails.logo_filename %>" alt="<%= organizationDetails.name %> logo">
         <section>
