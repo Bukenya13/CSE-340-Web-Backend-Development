@@ -6,8 +6,7 @@
         <div class="category-list">
             <% categories.forEach(function(category) { %>
                 <div class="category-card">
-                    <h3><%= category.name %></h3>
-                    <p><%= category.description %></p>
+                    <h2><a href="/category/<%= category.category_id %>"><%= category.name %></a></h2>
                 </div>
             <% }) %>
         </div>
